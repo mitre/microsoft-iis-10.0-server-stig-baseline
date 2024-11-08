@@ -34,7 +34,7 @@ Set redirectHttpToHttps to True.'
   tag cci: ['CCI-000366']
   tag nist: ['CM-6 b']
 
-  describe 'This test is NOT currently implemented, working on automating the test' do
+  describe 'This test is NOT currently implemented, working on automating the test - shortly' do
     skip 'This check must be preformed manually for now'
   end 
 end
