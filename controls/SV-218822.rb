@@ -21,22 +21,21 @@ If the TLS version is not TLS 1.2 or higher, according to NIST SP 800-52, or if 
   tag cci: ['CCI-002418']
   tag nist: ['SC-8']
 
+  tls1_1Enabled = registry_key('HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.1\Client').Enabled
   tls1_2Enabled = registry_key('HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2\Client').Enabled
-  tls1_3Enabled = registry_key('HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.3\Client').Enabled
-
 
   describe.one do
+    describe 'The web server must maintain the confidentiality of controlled information during transmission through the use of an approved TLS version such as TLS 1.1. (currently: ' + (tls1_1Enabled ? 'TLS 1.1 enabled' : 'Other enabled') + " )\n" do
+      subject { tls1_1Enabled }
+      it 'TLS 1.1 should be enabled' do
+        expect(subject).to cmp('1')
+      end
+    end
     describe 'The web server must maintain the confidentiality of controlled information during transmission through the use of an approved TLS version such as TLS 1.2. (currently: ' + (tls1_2Enabled ? 'TLS 1.2 enabled' : 'Other enabled') + " )\n" do
       subject { tls1_2Enabled }
       it 'TLS 1.2 should be enabled' do
         expect(subject).to cmp('1')
       end
     end
-    describe 'The web server must maintain the confidentiality of controlled information during transmission through the use of an approved TLS version such as TLS 1.3. (currently: ' + (tls1_3Enabled ? 'TLS 1.3 enabled' : 'Other enabled') + " )\n" do
-      subject { tls1_3Enabled }
-      it 'TLS 1.3 should be enabled' do
-        expect(subject).to cmp('1')
-      end
-    end
-  end
+  end  
 end

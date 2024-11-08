@@ -27,17 +27,25 @@ Change passwords for any local accounts present that are used by IIS 10.0, then 
 Develop an internal process for changing passwords on a regular basis.'
   impact 0.7
   ref 'DPMS Target Microsoft IIS 10.0 Server'
-  tag check_id: 'C-20295r310944_chk'
-  tag severity: 'high'
+  tag gtitle: 'SRG-APP-000516-WSR-000079'
   tag gid: 'V-218823'
   tag rid: 'SV-218823r961863_rule'
   tag stig_id: 'IIST-SV-000156'
-  tag gtitle: 'SRG-APP-000516-WSR-000079'
   tag fix_id: 'F-20293r310945_fix'
-  tag 'documentable'
-  tag legacy: ['SV-109285', 'V-100181']
   tag cci: ['CCI-000366']
   tag nist: ['CM-6 b']
+  tag 'false_negatives'
+  tag 'false_positives'
+  tag 'documentable'
+  tag 'mitigations'
+  tag 'severity_override_guidance'
+  tag 'potential_impacts'
+  tag 'third_party_tools'
+  tag 'mitigation_controls'
+  tag 'responsibility'
+  tag 'ia_controls'
+  tag 'check'
+  tag 'fix'
 
   describe 'This test currently has no automated tests, you must check manually' do
     skip 'This check must be preformed manually'

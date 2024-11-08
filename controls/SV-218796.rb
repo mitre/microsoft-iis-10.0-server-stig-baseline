@@ -23,17 +23,25 @@ In the left pane, expand "Local Users and Groups" and click "Users".
 Delete any local accounts which were created by features which have been uninstalled or are not used.'
   impact 0.5
   ref 'DPMS Target Microsoft IIS 10.0 Server'
-  tag check_id: 'C-20268r310863_chk'
-  tag severity: 'medium'
+  tag gtitle: 'SRG-APP-000141-WSR-000078'
   tag gid: 'V-218796'
   tag rid: 'SV-218796r960963_rule'
   tag stig_id: 'IIST-SV-000121'
-  tag gtitle: 'SRG-APP-000141-WSR-000078'
   tag fix_id: 'F-20266r310864_fix'
-  tag 'documentable'
-  tag legacy: ['SV-109231', 'V-100127']
   tag cci: ['CCI-000381']
   tag nist: ['CM-7 a']
+  tag 'false_negatives'
+  tag 'false_positives'
+  tag 'documentable'
+  tag 'mitigations'
+  tag 'severity_override_guidance'
+  tag 'potential_impacts'
+  tag 'third_party_tools'
+  tag 'mitigation_controls'
+  tag 'responsibility'
+  tag 'ia_controls'
+  tag 'check'
+  tag 'fix'
 
   min_local_users = attribute('minimal_local_users')
   local_users = command('Get-WmiObject -Class Win32_UserAccount -Filter  "LocalAccount=\'True\'" | select -ExpandProperty Name').stdout.strip.split("\r\n")

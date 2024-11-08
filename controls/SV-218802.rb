@@ -19,17 +19,25 @@ If this IIS 10 installation is supporting Microsoft Exchange, and not otherwise 
 All non-administrator access to shell scripts and operating system functions must be mission essential and documented.'
   impact 0.7
   ref 'DPMS Target Microsoft IIS 10.0 Server'
-  tag check_id: 'C-20274r310881_chk'
-  tag severity: 'high'
+  tag gtitle: 'SRG-APP-000211-WSR-000030'
   tag gid: 'V-218802'
   tag rid: 'SV-218802r961095_rule'
   tag stig_id: 'IIST-SV-000131'
-  tag gtitle: 'SRG-APP-000211-WSR-000030'
   tag fix_id: 'F-20272r310882_fix'
-  tag 'documentable'
-  tag legacy: ['SV-109243', 'V-100139']
   tag cci: ['CCI-001082']
   tag nist: ['SC-2']
+  tag 'false_negatives'
+  tag 'false_positives'
+  tag 'documentable'
+  tag 'mitigations'
+  tag 'severity_override_guidance'
+  tag 'potential_impacts'
+  tag 'third_party_tools'
+  tag 'mitigation_controls'
+  tag 'responsibility'
+  tag 'ia_controls'
+  tag 'check'
+  tag 'fix'
 
   describe 'This test currently has no automated tests, you must check manually' do
     skip 'This check must be preformed manually'

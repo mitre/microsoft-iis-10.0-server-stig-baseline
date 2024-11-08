@@ -33,17 +33,25 @@ Under "Log File Rollover", de-select the "Do not create new log files" setting.
 Configure a schedule to rollover log files on a regular basis.'
   impact 0.5
   ref 'DPMS Target Microsoft IIS 10.0 Server'
-  tag check_id: 'C-20287r310920_chk'
-  tag severity: 'medium'
+  tag gtitle: 'SRG-APP-000357-WSR-000150'
   tag gid: 'V-218815'
   tag rid: 'SV-218815r961392_rule'
   tag stig_id: 'IIST-SV-000145'
-  tag gtitle: 'SRG-APP-000357-WSR-000150'
   tag fix_id: 'F-20285r310921_fix'
-  tag 'documentable'
-  tag legacy: ['SV-109269', 'V-100165']
   tag cci: ['CCI-001849']
   tag nist: ['AU-4']
+  tag 'false_negatives'
+  tag 'false_positives'
+  tag 'documentable'
+  tag 'mitigations'
+  tag 'severity_override_guidance'
+  tag 'potential_impacts'
+  tag 'third_party_tools'
+  tag 'mitigation_controls'
+  tag 'responsibility'
+  tag 'ia_controls'
+  tag 'check'
+  tag 'fix'
 
   log_directory = attribute('log_directory')
   get_log_directory = command('Get-WebConfigurationProperty -pspath "MACHINE/WEBROOT/APPHOST" -filter "system.ApplicationHost/log" -Name centralW3CLogFile | select -expandProperty directory').stdout.strip

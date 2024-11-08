@@ -21,17 +21,25 @@ Under the "Actions" pane click "Disabled".
 Under the "Actions" pane, click "Apply".'
   impact 0.5
   ref 'DPMS Target Microsoft IIS 10.0 Server'
-  tag check_id: 'C-20280r310899_chk'
-  tag severity: 'medium'
+  tag gtitle: 'SRG-APP-000251-WSR-000157'
   tag gid: 'V-218808'
   tag rid: 'SV-218808r961158_rule'
   tag stig_id: 'IIST-SV-000138'
-  tag gtitle: 'SRG-APP-000251-WSR-000157'
   tag fix_id: 'F-20278r310900_fix'
-  tag 'documentable'
-  tag legacy: ['SV-109255', 'V-100151']
   tag cci: ['CCI-001310']
   tag nist: ['SI-10']
+  tag 'false_negatives'
+  tag 'false_positives'
+  tag 'documentable'
+  tag 'mitigations'
+  tag 'severity_override_guidance'
+  tag 'potential_impacts'
+  tag 'third_party_tools'
+  tag 'mitigation_controls'
+  tag 'responsibility'
+  tag 'ia_controls'
+  tag 'check'
+  tag 'fix'
 
   directory_browsing = command('Get-WebConfigurationProperty -Filter system.webServer/directoryBrowse -name * | select -expand enabled').stdout.strip
 

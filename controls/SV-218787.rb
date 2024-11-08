@@ -29,17 +29,25 @@ If provisions have been made to log the client IP via another field (i.e., utili
   desc 'fix', 'Access the proxy server through which inbound web traffic is passed and configure settings to pass web traffic to the IIS 10.0 web server transparently.'
   impact 0.5
   ref 'DPMS Target Microsoft IIS 10.0 Server'
-  tag check_id: 'C-20259r310836_chk'
-  tag severity: 'medium'
+  tag gtitle: 'SRG-APP-000098-WSR-000060'
   tag gid: 'V-218787'
   tag rid: 'SV-218787r960900_rule'
   tag stig_id: 'IIST-SV-000109'
-  tag gtitle: 'SRG-APP-000098-WSR-000060'
   tag fix_id: 'F-20257r310837_fix'
-  tag 'documentable'
-  tag legacy: ['SV-109213', 'V-100109']
   tag cci: ['CCI-000133']
-  tag nist: ['AU-3 d']
+  tag nist: ['AU-3', 'AU-3 d']
+  tag 'false_negatives'
+  tag 'false_positives'
+  tag 'documentable'
+  tag 'mitigations'
+  tag 'severity_override_guidance'
+  tag 'potential_impacts'
+  tag 'third_party_tools'
+  tag 'mitigation_controls'
+  tag 'responsibility'
+  tag 'ia_controls'
+  tag 'check'
+  tag 'fix'
 
   describe 'Manual review of IIS Logs is required ' do
     skip 'Ensure Client IP accurately identifies the client and not proxy server ( if used north of IIS )'

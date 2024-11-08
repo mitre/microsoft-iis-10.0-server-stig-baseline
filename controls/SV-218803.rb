@@ -17,17 +17,25 @@ If the IIS 10.0 web server management and the application's management functiona
   desc 'fix', "Develop a method to manage the hosted applications, either by moving its management functions off of the IIS 10.0 web server or by accessing the application's management via a uniquely assigned IP address."
   impact 0.5
   ref 'DPMS Target Microsoft IIS 10.0 Server'
-  tag check_id: 'C-20275r570474_chk'
-  tag severity: 'medium'
+  tag gtitle: 'SRG-APP-000211-WSR-000129'
   tag gid: 'V-218803'
   tag rid: 'SV-218803r961095_rule'
   tag stig_id: 'IIST-SV-000132'
-  tag gtitle: 'SRG-APP-000211-WSR-000129'
   tag fix_id: 'F-20273r310885_fix'
-  tag 'documentable'
-  tag legacy: ['SV-109245', 'V-100141']
   tag cci: ['CCI-001082']
   tag nist: ['SC-2']
+  tag 'false_negatives'
+  tag 'false_positives'
+  tag 'documentable'
+  tag 'mitigations'
+  tag 'severity_override_guidance'
+  tag 'potential_impacts'
+  tag 'third_party_tools'
+  tag 'mitigation_controls'
+  tag 'responsibility'
+  tag 'ia_controls'
+  tag 'check'
+  tag 'fix'
 
   describe 'Manual review of hosted applications and management procedure is required' do
     skip 'Manual review of hosted applications and management procedure is required'

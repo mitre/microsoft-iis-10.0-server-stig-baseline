@@ -31,17 +31,25 @@ Click "OK" to add.
 Click "Apply" under the "Actions" pane.'
   impact 0.5
   ref 'DPMS Target Microsoft IIS 10.0 Server'
-  tag check_id: 'C-20260r310839_chk'
-  tag severity: 'medium'
+  tag gtitle: 'SRG-APP-000099-WSR-000061'
   tag gid: 'V-218788'
   tag rid: 'SV-218788r960903_rule'
   tag stig_id: 'IIST-SV-000110'
-  tag gtitle: 'SRG-APP-000099-WSR-000061'
   tag fix_id: 'F-20258r310840_fix'
-  tag 'documentable'
-  tag legacy: ['SV-109215', 'V-100111']
   tag cci: ['CCI-000134']
-  tag nist: ['AU-3 e']
+  tag nist: ['AU-3', 'AU-3 e']
+  tag 'false_negatives'
+  tag 'false_positives'
+  tag 'documentable'
+  tag 'mitigations'
+  tag 'severity_override_guidance'
+  tag 'potential_impacts'
+  tag 'third_party_tools'
+  tag 'mitigation_controls'
+  tag 'responsibility'
+  tag 'ia_controls'
+  tag 'check'
+  tag 'fix'
 
   describe windows_feature('Web-Server') do
     it { should be_installed }
@@ -69,5 +77,5 @@ Click "Apply" under the "Actions" pane.'
     it { should match /sourceName\s+:\s+Connection\s+sourceType\s+:\s+RequestHeader/ }
     it { should match /sourceName\s+:\s+Warning\s+sourceType\s+:\s+RequestHeader/ }
     it { should match /sourceName\s+:\s+SERVER_NAME\s+sourceType\s+:\s+ServerVariable/ }
-  end  
+  end
 end

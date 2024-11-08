@@ -13,17 +13,25 @@ If any unnecessary Operating System features are installed, this is a finding.'
   desc 'fix', 'Remove all utility programs, Operating System features, or modules installed that are not necessary for web server operation.'
   impact 0.5
   ref 'DPMS Target Microsoft IIS 10.0 Server'
-  tag check_id: 'C-20269r310866_chk'
-  tag severity: 'medium'
+  tag gtitle: 'SRG-APP-000141-WSR-000080'
   tag gid: 'V-218797'
   tag rid: 'SV-218797r960963_rule'
   tag stig_id: 'IIST-SV-000123'
-  tag gtitle: 'SRG-APP-000141-WSR-000080'
   tag fix_id: 'F-20267r310867_fix'
-  tag 'documentable'
-  tag legacy: ['SV-109233', 'V-100129']
   tag cci: ['CCI-000381']
   tag nist: ['CM-7 a']
+  tag 'false_negatives'
+  tag 'false_positives'
+  tag 'documentable'
+  tag 'mitigations'
+  tag 'severity_override_guidance'
+  tag 'potential_impacts'
+  tag 'third_party_tools'
+  tag 'mitigation_controls'
+  tag 'responsibility'
+  tag 'ia_controls'
+  tag 'check'
+  tag 'fix'
 
   describe 'This test currently has no automated tests, you must check manually' do
     skip 'This check must be preformed manually'

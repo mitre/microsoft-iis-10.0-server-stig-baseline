@@ -11,17 +11,25 @@ If the folder or sub-folders contain any executable sample code, example applica
   desc 'fix', 'Remove any executable sample code, example applications, or tutorials which are not explicitly used by a production website.'
   impact 0.7
   ref 'DPMS Target Microsoft IIS 10.0 Server'
-  tag check_id: 'C-20267r310860_chk'
-  tag severity: 'high'
+  tag gtitle: 'SRG-APP-000141-WSR-000077'
   tag gid: 'V-218795'
   tag rid: 'SV-218795r960963_rule'
   tag stig_id: 'IIST-SV-000120'
-  tag gtitle: 'SRG-APP-000141-WSR-000077'
   tag fix_id: 'F-20265r310861_fix'
-  tag 'documentable'
-  tag legacy: ['SV-109229', 'V-100125']
   tag cci: ['CCI-000381']
   tag nist: ['CM-7 a']
+  tag 'false_negatives'
+  tag 'false_positives'
+  tag 'documentable'
+  tag 'mitigations'
+  tag 'severity_override_guidance'
+  tag 'potential_impacts'
+  tag 'third_party_tools'
+  tag 'mitigation_controls'
+  tag 'responsibility'
+  tag 'ia_controls'
+  tag 'check'
+  tag 'fix'
 
   describe windows_feature('Web-Server') do
     it { should be_installed }

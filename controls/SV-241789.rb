@@ -30,7 +30,7 @@ Note: This can be performed multiple ways, this is an example.'
   tag cci: ['CCI-001312']
   tag nist: ['SI-11 a']
 
-  describe 'Manual review is required - need to implement test automation' do
-    skip 'Manual review is required - need to implement test automation'
-  end
+  describe 'This test currently has no automated tests, you must check manually' do
+    skip 'This check must be preformed manually'
+  end  
 end

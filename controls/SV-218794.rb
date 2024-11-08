@@ -29,17 +29,25 @@ In the "Application Request Routing" settings window, remove the check from the 
 Click "Apply" in the "Actions" pane.'
   impact 0.5
   ref 'DPMS Target Microsoft IIS 10.0 Server'
-  tag check_id: 'C-20266r928918_chk'
-  tag severity: 'medium'
+  tag gtitle: 'SRG-APP-000141-WSR-000076'
   tag gid: 'V-218794'
   tag rid: 'SV-218794r960963_rule'
   tag stig_id: 'IIST-SV-000119'
-  tag gtitle: 'SRG-APP-000141-WSR-000076'
   tag fix_id: 'F-20264r928840_fix'
-  tag 'documentable'
-  tag legacy: ['SV-109227', 'V-100123']
   tag cci: ['CCI-000381']
   tag nist: ['CM-7 a']
+  tag 'false_negatives'
+  tag 'false_positives'
+  tag 'documentable'
+  tag 'mitigations'
+  tag 'severity_override_guidance'
+  tag 'potential_impacts'
+  tag 'third_party_tools'
+  tag 'mitigation_controls'
+  tag 'responsibility'
+  tag 'ia_controls'
+  tag 'check'
+  tag 'fix'
 
   proxy_checkbox = command('Get-WebConfigurationProperty -pspath "MACHINE/WEBROOT/APPHOST" -filter "system.webServer/proxy" -name "enabled" | select -ExpandProperty Value').stdout.strip
   proxy_enabled = proxy_checkbox == 'False' || proxy_checkbox == '' ? false : true
@@ -51,7 +59,7 @@ Click "Apply" in the "Actions" pane.'
     describe windows_feature('Web-WebServer') do
       it { should be_installed }
     end
-    describe windows_feature('Web-Common-Http') do
+    describe windows_feature('Web-Common-') do
       it { should be_installed }
     end
 

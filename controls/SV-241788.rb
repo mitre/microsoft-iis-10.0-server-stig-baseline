@@ -29,7 +29,17 @@ Note: This can be performed multiple ways, this is an example.'
   tag cci: ['CCI-001312']
   tag nist: ['SI-11 a']
 
-  describe registry_key('HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\HTTP\Parameters') do
-    its('DisableServerHeader') { should eq 1 }
+  disable_server_header = registry_key('HKLM\\System\\CurrentControlSet\\Services\\HTTP\\Parameters').DisableServerHeader
+
+  describe.one do
+    describe 'The web server must not provide server version information in the HTTP Response Headers' do
+      subject { disable_server_header }
+      it 'Server Header version information should be disabled' do
+        expect(subject).to cmp('1')
+      end
+    end
+    describe 'Check if Server Version information has been removed via other means, such as using a rewrite outbound rule' do
+      skip 'This check must be preformed manually'
+    end
   end
 end

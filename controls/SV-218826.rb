@@ -37,14 +37,14 @@ Set the "maxconnections" parameter to a value greater than zero.'
   tag gtitle: 'SRG-APP-000001-WSR-000001'
   tag fix_id: 'F-20296r310954_fix'
   tag 'documentable'
-  tag legacy: ['SV-109291', 'V-100187']
+  tag legacy: ['SV-104771', 'V-95633', 'SV-109291', 'V-100187']
   tag cci: ['CCI-000054']
   tag nist: ['AC-10']
 
-  describe 'The IIS 10.0 websites MaxConnections setting must be configured to limit the number of allowed simultaneous session requests ' do
-    subject { command('Get-WebConfigurationProperty -pspath "MACHINE/WEBROOT/APPHOST" -filter "system.applicationHost/sites/siteDefaults/limits" -Name maxconnections | select -expandProperty value').stdout.strip }
-    it 'The maxconnections value is greater than zero' do
-      expect(subject).to be >= 0
-    end
+  max_connection_limit = command('Get-WebConfigurationProperty -Filter system.applicationHost/sites -name * | select -expand siteDefaults | select -expand limits').stdout.strip
+
+  describe 'The IIS MaxConnections is configured to limit the number of allowed simultaneous session requests' do
+    subject { max_connection_limit.to_i }
+    it { should be > 0 }
   end
 end

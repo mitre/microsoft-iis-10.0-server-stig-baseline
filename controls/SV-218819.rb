@@ -34,17 +34,25 @@ Configure the following registry keys to levels to accommodate the hosted applic
 "UriScavengerPeriod"'
   impact 0.5
   ref 'DPMS Target Microsoft IIS 10.0 Server'
-  tag check_id: 'C-20291r310932_chk'
-  tag severity: 'medium'
+  tag gtitle: 'SRG-APP-000435-WSR-000148'
   tag gid: 'V-218819'
   tag rid: 'SV-218819r961620_rule'
   tag stig_id: 'IIST-SV-000151'
-  tag gtitle: 'SRG-APP-000435-WSR-000148'
   tag fix_id: 'F-20289r310933_fix'
-  tag 'documentable'
-  tag legacy: ['SV-109277', 'V-100173']
   tag cci: ['CCI-002385']
-  tag nist: ['SC-5 a']
+  tag nist: ['SC-5', 'SC-5 a']
+  tag 'false_negatives'
+  tag 'false_positives'
+  tag 'documentable'
+  tag 'mitigations'
+  tag 'severity_override_guidance'
+  tag 'potential_impacts'
+  tag 'third_party_tools'
+  tag 'mitigation_controls'
+  tag 'responsibility'
+  tag 'ia_controls'
+  tag 'check'
+  tag 'fix'
 
   describe registry_key('HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\HTTP\Parameters') do
     its('URIEnableCache') { should_not eq nil }

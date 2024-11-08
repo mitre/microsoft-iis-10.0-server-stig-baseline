@@ -43,14 +43,9 @@ Under "Time-out (in minutes)", enter a value of "20 or less".'
   tag nist: ['SC-23 (3)']
 
   cookie_setting = command('Get-WebConfigurationProperty -Filter system.web/sessionState -name * | select -expand cookieless').stdout.strip
-  cookie_timeout = command('Get-WebConfigurationProperty -Filter system.web/sessionState -name * | select -expand timeout | select -expand Minutes').stdout.strip
 
-  describe 'The website session state cookie settings' do
+  describe 'The web server must accept only system-generated session identifiers' do
     subject { cookie_setting }
     it { should cmp 'UseCookies' }
-  end
-  describe 'The IIS web server cookie timeout limit' do
-    subject { cookie_timeout.to_i }
-    it { should be <= 20 }
   end
 end

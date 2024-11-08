@@ -4,9 +4,7 @@ control 'SV-218785' do
 
 Ascertaining the correct order of the events that occurred is important during forensic analysis. Events that appear harmless by themselves might be flagged as a potential threat when properly viewed in sequence. By also establishing the event date and time, an event can be properly viewed with an enterprise tool to fully see a possible threat in its entirety.
 
-Without sufficient information establishing when the log event occurred, investigation into the cause of event is severely hindered. Log record content that may be necessary to satisfy the requirement of this control includes, but is not limited to, time stamps, source and destination IP addresses, user/process identifiers, event descriptions, application-specific events, success/fail indications, file names involved, access control, or flow control rules invoked.
-
-'
+Without sufficient information establishing when the log event occurred, investigation into the cause of event is severely hindered. Log record content that may be necessary to satisfy the requirement of this control includes, but is not limited to, time stamps, source and destination IP addresses, user/process identifiers, event descriptions, application-specific events, success/fail indications, file names involved, access control, or flow control rules invoked.'
   desc 'check', 'Open the IIS 10.0 Manager.
 
 Click the IIS 10.0 web server name.
@@ -31,18 +29,26 @@ Select the following fields: Date, Time, Client IP Address, User Name, Method, U
 Under the "Actions" pane, click "Apply".'
   impact 0.5
   ref 'DPMS Target Microsoft IIS 10.0 Server'
-  tag check_id: 'C-20257r310830_chk'
-  tag severity: 'medium'
+  tag gtitle: 'SRG-APP-000092-WSR-000055'
+  tag satisfies: ['SRG-APP-000092-WSR-000055', 'SRG-APP-000093-WSR-000053', 'SRG-APP-000095-WSR-000056', 'SRG-APP-000096-WSR-000057', 'SRG-APP-000097-WSR-000058', 'SRG-APP-000097-WSR-000059']
   tag gid: 'V-218785'
   tag rid: 'SV-218785r986149_rule'
   tag stig_id: 'IIST-SV-000102'
-  tag gtitle: 'SRG-APP-000092-WSR-000055'
   tag fix_id: 'F-20255r310831_fix'
-  tag satisfies: ['SRG-APP-000092-WSR-000055', 'SRG-APP-000093-WSR-000053', 'SRG-APP-000095-WSR-000056', 'SRG-APP-000096-WSR-000057', 'SRG-APP-000097-WSR-000058', 'SRG-APP-000097-WSR-000059']
+  tag cci: ['CCI-000130', 'CCI-000131', 'CCI-000132', 'CCI-000133', 'CCI-001462', 'CCI-001464']
+  tag nist: ['AU-3', 'AU-14 (2)', 'AU-14 (1)', 'AU-3 a', 'AU-3 b', 'AU-3 c', 'AU-3 d']
+  tag 'false_negatives'
+  tag 'false_positives'
   tag 'documentable'
-  tag legacy: ['SV-109209', 'V-100105']
-  tag cci: ['CCI-000130', 'CCI-000131', 'CCI-000132', 'CCI-000133', 'CCI-001464']
-  tag nist: ['AU-3 a', 'AU-3 b', 'AU-3 c', 'AU-3 d', 'AU-14 (1)']
+  tag 'mitigations'
+  tag 'severity_override_guidance'
+  tag 'potential_impacts'
+  tag 'third_party_tools'
+  tag 'mitigation_controls'
+  tag 'responsibility'
+  tag 'ia_controls'
+  tag 'check'
+  tag 'fix'
 
   is_file_logging_enabled_string = command('Get-WebConfiguration system.applicationHost/log/centralW3CLogFile | select -expand enabled').stdout.strip
   is_file_logging_enabled = is_file_logging_enabled_string == 'False' || is_file_logging_enabled_string == '' ? false : true

@@ -23,17 +23,25 @@ Expand the roles node, right-click “Print Services”, and then select “Remo
 If the Internet Printing option is checked, clear the check box, click “Next”, and then click “Remove” to complete the wizard.'
   impact 0.5
   ref 'DPMS Target Microsoft IIS 10.0 Server'
-  tag check_id: 'C-20290r310929_chk'
-  tag severity: 'medium'
+  tag gtitle: 'SRG-APP-000383-WSR-000175'
   tag gid: 'V-218818'
   tag rid: 'SV-218818r961470_rule'
   tag stig_id: 'IIST-SV-000149'
-  tag gtitle: 'SRG-APP-000383-WSR-000175'
   tag fix_id: 'F-20288r310930_fix'
-  tag 'documentable'
-  tag legacy: ['SV-109275', 'V-100171']
   tag cci: ['CCI-001762']
   tag nist: ['CM-7 (1) (b)']
+  tag 'false_negatives'
+  tag 'false_positives'
+  tag 'documentable'
+  tag 'mitigations'
+  tag 'severity_override_guidance'
+  tag 'potential_impacts'
+  tag 'third_party_tools'
+  tag 'mitigation_controls'
+  tag 'responsibility'
+  tag 'ia_controls'
+  tag 'check'
+  tag 'fix'
 
   describe directory('%windir%\web\printers') do
     it { should_not exist }

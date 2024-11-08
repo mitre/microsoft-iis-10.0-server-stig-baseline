@@ -26,35 +26,43 @@ Alter the list as necessary to ensure "All Users" is set to "Allow" and "Anonymo
 Remove any other line items.'
   impact 0.5
   ref 'DPMS Target Microsoft IIS 10.0 Server'
-  tag check_id: 'C-20297r928845_chk'
-  tag severity: 'medium'
+  tag gtitle: 'SRG-APP-000516-WSR-000174'
   tag gid: 'V-218825'
   tag rid: 'SV-218825r961863_rule'
   tag stig_id: 'IIST-SV-000159'
-  tag gtitle: 'SRG-APP-000516-WSR-000174'
   tag fix_id: 'F-20295r881081_fix'
-  tag 'documentable'
-  tag legacy: ['SV-109289', 'V-100185']
   tag cci: ['CCI-000366']
   tag nist: ['CM-6 b']
+  tag 'false_negatives'
+  tag 'false_positives'
+  tag 'documentable'
+  tag 'mitigations'
+  tag 'severity_override_guidance'
+  tag 'potential_impacts'
+  tag 'third_party_tools'
+  tag 'mitigation_controls'
+  tag 'responsibility'
+  tag 'ia_controls'
+  tag 'check'
+  tag 'fix'
 
   anonymousAuthentication = command('Get-WebConfigurationProperty -pspath "MACHINE/WEBROOT/APPHOST" -filter "system.webServer/security/authentication/anonymousAuthentication" -Name enabled | select -expandProperty value').stdout.strip == 'False'
   basicAuthentication = command('Get-WebConfigurationProperty -pspath "MACHINE/WEBROOT/APPHOST" -filter "system.webServer/security/authentication/basicAuthentication" -Name enabled | select -expandProperty value').stdout.strip == 'True'
   defaultLogonDomain = command('Get-WebConfigurationProperty -pspath "MACHINE/WEBROOT/APPHOST" -filter "system.webServer/security/authentication/basicAuthentication" -Name defaultLogonDomain | select -expandProperty value').stdout.strip == 'Administrator'
 
-  describe 'The IIS 10.0 web server must have a global authorization rule configured to restrict access to anonymousAuthentication by disabling it. (currently: ' + (anonymousAuthentication ? 'disabled' : 'enabled') + " )\n" do
+  describe 'The IIS 8.5 web server must have a global authorization rule configured to restrict access to anonymousAuthentication by disabling it. (currently: ' + (anonymousAuthentication ? 'disabled' : 'enabled') + " )\n" do
     subject { command('Get-WebConfigurationProperty -pspath "MACHINE/WEBROOT/APPHOST" -filter "system.webServer/security/authentication/anonymousAuthentication" -Name enabled | select -expandProperty value').stdout.strip }
     it 'The anonymousAuthentication should be false' do
       expect(subject).to cmp('false')
     end
   end
-  describe 'The IIS 10.0 web server must have a global authorization rule configured to restrict access to basicAuthentication, this attribute should be enabled. (currently: ' + (basicAuthentication ? 'enabled' : 'disabled') + " )\n" do
+  describe 'The IIS 8.5 web server must have a global authorization rule configured to restrict access to basicAuthentication, this attribute should be enabled. (currently: ' + (basicAuthentication ? 'enabled' : 'disabled') + " )\n" do
     subject { command('Get-WebConfigurationProperty -pspath "MACHINE/WEBROOT/APPHOST" -filter "system.webServer/security/authentication/basicAuthentication" -Name enabled | select -expandProperty value').stdout.strip }
     it 'The basicAuthentication should be enabled' do
       expect(subject).to cmp('true')
     end
   end
-  describe 'The IIS 10.0 web server must have a global authorization rule configured to restrict access to basicAuthentication attribute defaultLogonDomain, this attribute should be set to Administrator only. (currently: ' + (defaultLogonDomain ? 'Administrator' : 'Other') + " )\n" do
+  describe 'The IIS 8.5 web server must have a global authorization rule configured to restrict access to basicAuthentication attribute defaultLogonDomain, this attribute should be set to Administrator only. (currently: ' + (defaultLogonDomain ? 'Administrator' : 'Other') + " )\n" do
     subject { command('Get-WebConfigurationProperty -pspath "MACHINE/WEBROOT/APPHOST" -filter "system.webServer/security/authentication/basicAuthentication" -Name defaultLogonDomain | select -expandProperty value').stdout.strip }
     it 'The basicAuthentication attribute defaultLogonDomain should be Administrator' do
       expect(subject).to cmp('Administrator')

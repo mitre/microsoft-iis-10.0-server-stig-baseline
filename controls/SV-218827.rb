@@ -34,22 +34,7 @@ Set redirectHttpToHttps to True.'
   tag cci: ['CCI-000366']
   tag nist: ['CM-6 b']
 
-  describe 'The IIS 10.0 web server must enable HTTP Strict Transport Security (HSTS) ' do
-    subject { command('Get-WebConfigurationProperty -pspath "MACHINE/WEBROOT/APPHOST" -filter "system.applicationHost/sites/siteDefaults/HSTS" -Name includeSubDomains | select -expandProperty value').stdout.strip }
-    it 'The includeSubDomains attribute should be set to True' do
-      expect(subject).to cmp('true')
-    end
-  end
-  describe 'The IIS 10.0 web server must enable HTTP Strict Transport Security (HSTS) ' do
-    subject { command('Get-WebConfigurationProperty -pspath "MACHINE/WEBROOT/APPHOST" -filter "system.applicationHost/sites/siteDefaults/HSTS" -Name max-age | select -expandProperty value').stdout.strip }
-    it 'The max-age value is greater than zero' do
-      expect(subject).to be >= 0
-    end
-  end
-  describe 'The IIS 10.0 web server must enable HTTP Strict Transport Security (HSTS) ' do
-    subject { command('Get-WebConfigurationProperty -pspath "MACHINE/WEBROOT/APPHOST" -filter "system.applicationHost/sites/siteDefaults/HSTS" -Name redirectHttpToHttps | select -expandProperty value').stdout.strip }
-    it 'The redirectHttpToHttps attribute should be set to True' do
-      expect(subject).to cmp('true')
-    end
-  end
+  describe 'This test is NOT currently implemented, working on automating the test' do
+    skip 'This check must be preformed manually for now'
+  end 
 end

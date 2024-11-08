@@ -21,17 +21,25 @@ Click any error message, and then click "Edit Feature Setting" from the "Actions
 Set Feature Setting to "Detailed errors for local requests and custom error pages for remote requests" or "Custom error pages".'
   impact 0.5
   ref 'DPMS Target Microsoft IIS 10.0 Server'
-  tag check_id: 'C-20282r865203_chk'
-  tag severity: 'medium'
+  tag gtitle: 'SRG-APP-000266-WSR-000159'
   tag gid: 'V-218810'
   tag rid: 'SV-218810r961167_rule'
   tag stig_id: 'IIST-SV-000140'
-  tag gtitle: 'SRG-APP-000266-WSR-000159'
   tag fix_id: 'F-20280r865204_fix'
-  tag 'documentable'
-  tag legacy: ['SV-109259', 'V-100155']
   tag cci: ['CCI-001312']
   tag nist: ['SI-11 a']
+  tag 'false_negatives'
+  tag 'false_positives'
+  tag 'documentable'
+  tag 'mitigations'
+  tag 'severity_override_guidance'
+  tag 'potential_impacts'
+  tag 'third_party_tools'
+  tag 'mitigation_controls'
+  tag 'responsibility'
+  tag 'ia_controls'
+  tag 'check'
+  tag 'fix'
 
   errorMode = command('Get-WebConfigurationProperty -filter "system.webServer/httpErrors" -Name errorMode').stdout.strip
 

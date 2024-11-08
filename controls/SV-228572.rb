@@ -21,11 +21,11 @@ If the IIS web server running SMTP relay services is not configured to only allo
   tag gtitle: 'SRG-APP-000141-WSR-000075'
   tag fix_id: 'F-30783r505289_fix'
   tag 'documentable'
-  tag legacy: ['V-102895', 'SV-111857']
+  tag legacy: ['V-102893', 'SV-111855', 'V-102895', 'SV-111857']
   tag cci: ['CCI-000381']
   tag nist: ['CM-7 a']
 
-  describe 'Manual interview with the System Administrator about the role of the IIS 10.0 web server is required' do
-    skip 'Manual interview with the System Administrator about the role of the IIS 10.0 web server is required'
+  describe 'This test currently has no automated tests, you must check manually' do
+    skip 'This check must be preformed manually'
   end
 end

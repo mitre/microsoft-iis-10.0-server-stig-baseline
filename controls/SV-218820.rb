@@ -29,21 +29,29 @@ Select "True" for the "keepSessionIdSecure" setting.
 Select "Apply" from the "Actions" pane.'
   impact 0.5
   ref 'DPMS Target Microsoft IIS 10.0 Server'
-  tag check_id: 'C-20292r310935_chk'
-  tag severity: 'medium'
+  tag gtitle: 'SRG-APP-000439-WSR-000152'
   tag gid: 'V-218820'
   tag rid: 'SV-218820r961632_rule'
   tag stig_id: 'IIST-SV-000152'
-  tag gtitle: 'SRG-APP-000439-WSR-000152'
   tag fix_id: 'F-20290r310936_fix'
-  tag 'documentable'
-  tag legacy: ['SV-109279', 'V-100175']
   tag cci: ['CCI-002418']
   tag nist: ['SC-8']
+  tag 'false_negatives'
+  tag 'false_positives'
+  tag 'documentable'
+  tag 'mitigations'
+  tag 'severity_override_guidance'
+  tag 'potential_impacts'
+  tag 'third_party_tools'
+  tag 'mitigation_controls'
+  tag 'responsibility'
+  tag 'ia_controls'
+  tag 'check'
+  tag 'fix'
 
   # keepSessionIdSecure = command('Get-WebConfigurationProperty -pspath "MACHINE/WEBROOT/APPHOST" -filter "system.webServer/asp/session" -Name keepSessionIdSecure | select -expandProperty value').stdout.strip == "True"
-  
-  describe 'IIS 10.0 web server session IDs must be sent to the client using TLS, this is performed by going to ' do
+
+  describe 'IIS 8.5 web server session IDs must be sent to the client using TLS, this is performed by going to ' do
     subject { command('Get-WebConfigurationProperty -pspath "MACHINE/WEBROOT/APPHOST" -filter "system.webServer/asp/session" -Name keepSessionIdSecure | select -expandProperty value').stdout.strip }
     it 'The keepSessionIdSecure attribute should be set to True' do
       expect(subject).to cmp('true')

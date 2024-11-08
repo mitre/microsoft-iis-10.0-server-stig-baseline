@@ -11,17 +11,25 @@ If files with .java or .jpp extensions are found, this is a finding.'
   desc 'fix', 'Remove all files from the web server with both .java and .jpp extensions.'
   impact 0.5
   ref 'DPMS Target Microsoft IIS 10.0 Server'
-  tag check_id: 'C-20273r310878_chk'
-  tag severity: 'medium'
+  tag gtitle: 'SRG-APP-000206-WSR-000128'
   tag gid: 'V-218801'
   tag rid: 'SV-218801r961083_rule'
   tag stig_id: 'IIST-SV-000130'
-  tag gtitle: 'SRG-APP-000206-WSR-000128'
   tag fix_id: 'F-20271r310879_fix'
-  tag 'documentable'
-  tag legacy: ['SV-109241', 'V-100137']
   tag cci: ['CCI-001166']
   tag nist: ['SC-18 (1)']
+  tag 'false_negatives'
+  tag 'false_positives'
+  tag 'documentable'
+  tag 'mitigations'
+  tag 'severity_override_guidance'
+  tag 'potential_impacts'
+  tag 'third_party_tools'
+  tag 'mitigation_controls'
+  tag 'responsibility'
+  tag 'ia_controls'
+  tag 'check'
+  tag 'fix'
 
   if attribute('disable_slow_controls')
     describe "This control consistently takes a long time to run and has been disabled

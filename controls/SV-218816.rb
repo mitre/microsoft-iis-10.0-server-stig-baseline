@@ -4,9 +4,7 @@ control 'SV-218816' do
 
 To limit changes to the web server and limit exposure to any adverse effects from the changes, files such as the web server application files, libraries, and configuration files must have permissions and ownership set properly to only allow privileged users access.
 
-The key web service administrative and configuration tools must only be accessible by the web server staff. All users granted this authority will be documented and approved by the ISSO. Access to the IIS Manager will be limited to authorized users and administrators.
-
-'
+The key web service administrative and configuration tools must only be accessible by the web server staff. All users granted this authority will be documented and approved by the ISSO. Access to the IIS Manager will be limited to authorized users and administrators.'
   desc 'check', 'Right-click "InetMgr.exe", then click "Properties" from the "Context" menu.
 
 Select the "Security" tab.
@@ -36,18 +34,26 @@ If any other access is observed, this is a finding.'
   desc 'fix', 'Restrict access to the web administration tool to only the web manager and the web manager’s designees.'
   impact 0.5
   ref 'DPMS Target Microsoft IIS 10.0 Server'
-  tag check_id: 'C-20288r310923_chk'
-  tag severity: 'medium'
+  tag gtitle: 'SRG-APP-000380-WSR-000072'
+  tag satisfies: ['SRG-APP-000380-WSR-000072', 'SRG-APP-000435-WSR-000147', 'SRG-APP-000033-WSR-000169']
   tag gid: 'V-218816'
   tag rid: 'SV-218816r961461_rule'
   tag stig_id: 'IIST-SV-000147'
-  tag gtitle: 'SRG-APP-000380-WSR-000072'
   tag fix_id: 'F-20286r310924_fix'
-  tag satisfies: ['SRG-APP-000380-WSR-000072', 'SRG-APP-000435-WSR-000147', 'SRG-APP-000033-WSR-000169']
-  tag 'documentable'
-  tag legacy: ['SV-109271', 'V-100167']
   tag cci: ['CCI-000213', 'CCI-001813', 'CCI-002385']
-  tag nist: ['AC-3', 'CM-5 (1) (a)', 'SC-5 a']
+  tag nist: ['AC-3', 'CM-5 (1)', 'SC-5', 'CM-5 (1) (a)', 'SC-5 a']
+  tag 'false_negatives'
+  tag 'false_positives'
+  tag 'documentable'
+  tag 'mitigations'
+  tag 'severity_override_guidance'
+  tag 'potential_impacts'
+  tag 'third_party_tools'
+  tag 'mitigation_controls'
+  tag 'responsibility'
+  tag 'ia_controls'
+  tag 'check'
+  tag 'fix'
 
   authorized_users = attribute('authorized_users')
 

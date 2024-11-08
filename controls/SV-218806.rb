@@ -13,19 +13,27 @@ If documentation for a disaster recovery has not been established, this is a fin
 Document and test the disaster recovery methods designed.'
   impact 0.5
   ref 'DPMS Target Microsoft IIS 10.0 Server'
-  tag check_id: 'C-20278r310893_chk'
-  tag severity: 'medium'
+  tag gtitle: 'SRG-APP-000225-WSR-000074'
   tag gid: 'V-218806'
   tag rid: 'SV-218806r961122_rule'
   tag stig_id: 'IIST-SV-000136'
-  tag gtitle: 'SRG-APP-000225-WSR-000074'
   tag fix_id: 'F-20276r310894_fix'
-  tag 'documentable'
-  tag legacy: ['SV-109251', 'V-100147']
   tag cci: ['CCI-001190']
   tag nist: ['SC-24']
+  tag 'false_negatives'
+  tag 'false_positives'
+  tag 'documentable'
+  tag 'mitigations'
+  tag 'severity_override_guidance'
+  tag 'potential_impacts'
+  tag 'third_party_tools'
+  tag 'mitigation_controls'
+  tag 'responsibility'
+  tag 'ia_controls'
+  tag 'check'
+  tag 'fix'
 
-  describe 'Manual review of disaster recovery (DR) portion of BCDR is required.' do
+  describe 'Manual review of DR portion of BCDR is required.' do
     skip 'Manual review of DR portion of BCDR is required.'
   end
 end

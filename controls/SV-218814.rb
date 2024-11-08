@@ -17,11 +17,8 @@ ALL RESTRICTED APPLICATION PACKAGES (built-in security group): Read and execute
 Users: Read and execute, list folder contents
 CREATOR OWNER: Full Control, Subfolders and files only'
   desc 'fix', 'Open Explorer and navigate to the inetpub directory.
-
 Right-click "inetpub" and select "Properties".
-
 Click the "Security" tab.
-
 Set the following permissions: 
 
 SYSTEM: Full control
@@ -32,17 +29,25 @@ Users: Read and execute, list folder contents
 CREATOR OWNER: special permissions to subkeys'
   impact 0.5
   ref 'DPMS Target Microsoft IIS 10.0 Server'
-  tag check_id: 'C-20286r310917_chk'
-  tag severity: 'medium'
+  tag gtitle: 'SRG-APP-000340-WSR-000029'
   tag gid: 'V-218814'
   tag rid: 'SV-218814r961353_rule'
   tag stig_id: 'IIST-SV-000144'
-  tag gtitle: 'SRG-APP-000340-WSR-000029'
   tag fix_id: 'F-20284r310918_fix'
-  tag 'documentable'
-  tag legacy: ['SV-109267', 'V-100163']
   tag cci: ['CCI-002235']
   tag nist: ['AC-6 (10)']
+  tag 'false_negatives'
+  tag 'false_positives'
+  tag 'documentable'
+  tag 'mitigations'
+  tag 'severity_override_guidance'
+  tag 'potential_impacts'
+  tag 'third_party_tools'
+  tag 'mitigation_controls'
+  tag 'responsibility'
+  tag 'ia_controls'
+  tag 'check'
+  tag 'fix'
 
   describe directory('C:\\inetpub') do
     it { should be_allowed('full-control', by_user: 'NT AUTHORITY\\SYSTEM') }

@@ -41,17 +41,25 @@ From the list of extensions under "Application", remove MIME types for OS shell 
 Under the "Actions" pane, click "Apply".'
   impact 0.5
   ref 'DPMS Target Microsoft IIS 10.0 Server'
-  tag check_id: 'C-20270r310869_chk'
-  tag severity: 'medium'
+  tag gtitle: 'SRG-APP-000141-WSR-000081'
   tag gid: 'V-218798'
   tag rid: 'SV-218798r960963_rule'
   tag stig_id: 'IIST-SV-000124'
-  tag gtitle: 'SRG-APP-000141-WSR-000081'
   tag fix_id: 'F-20268r310870_fix'
-  tag 'documentable'
-  tag legacy: ['SV-109235', 'V-100131']
   tag cci: ['CCI-000381']
   tag nist: ['CM-7 a']
+  tag 'false_negatives'
+  tag 'false_positives'
+  tag 'documentable'
+  tag 'mitigations'
+  tag 'severity_override_guidance'
+  tag 'potential_impacts'
+  tag 'third_party_tools'
+  tag 'mitigation_controls'
+  tag 'responsibility'
+  tag 'ia_controls'
+  tag 'check'
+  tag 'fix'
 
   exe_files = command("Get-WebConfiguration -pspath \"MACHINE/WEBROOT/APPHOST\" -filter \"system.webServer/staticContent/mimeMap\" | ? {$_.fileextension -eq '.exe'}").stdout.strip
 

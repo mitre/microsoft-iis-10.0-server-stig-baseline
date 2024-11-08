@@ -19,17 +19,25 @@ Double-click the "Server Certificate" icon.
 Import a valid DoD certificate and remove any non-DoD certificates.'
   impact 0.5
   ref 'DPMS Target Microsoft IIS 10.0 Server'
-  tag check_id: 'C-20272r310875_chk'
-  tag severity: 'medium'
+  tag gtitle: 'SRG-APP-000175-WSR-000095'
   tag gid: 'V-218800'
   tag rid: 'SV-218800r961038_rule'
   tag stig_id: 'IIST-SV-000129'
-  tag gtitle: 'SRG-APP-000175-WSR-000095'
   tag fix_id: 'F-20270r310876_fix'
-  tag 'documentable'
-  tag legacy: ['SV-109239', 'V-100135']
   tag cci: ['CCI-000185']
-  tag nist: ['IA-5 (2) (b) (1)']
+  tag nist: ['IA-5 (2) (a)', 'IA-5 (2) (b) (1)']
+  tag 'false_negatives'
+  tag 'false_positives'
+  tag 'documentable'
+  tag 'mitigations'
+  tag 'severity_override_guidance'
+  tag 'potential_impacts'
+  tag 'third_party_tools'
+  tag 'mitigation_controls'
+  tag 'responsibility'
+  tag 'ia_controls'
+  tag 'check'
+  tag 'fix'
 
   CertList_Expired = command('Import-Module -Name WebAdministration;
   Get-ChildItem IIS:SSLBindings `

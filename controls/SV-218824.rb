@@ -25,17 +25,25 @@ Remove the check from the "Allow unspecified CGI modules" and the "Allow unspeci
 Click "OK".'
   impact 0.5
   ref 'DPMS Target Microsoft IIS 10.0 Server'
-  tag check_id: 'C-20296r310947_chk'
-  tag severity: 'medium'
+  tag gtitle: 'SRG-APP-000516-WSR-000174'
   tag gid: 'V-218824'
   tag rid: 'SV-218824r961863_rule'
   tag stig_id: 'IIST-SV-000158'
-  tag gtitle: 'SRG-APP-000516-WSR-000174'
   tag fix_id: 'F-20294r310948_fix'
-  tag 'documentable'
-  tag legacy: ['SV-109287', 'V-100183']
   tag cci: ['CCI-000366']
   tag nist: ['CM-6 b']
+  tag 'false_negatives'
+  tag 'false_positives'
+  tag 'documentable'
+  tag 'mitigations'
+  tag 'severity_override_guidance'
+  tag 'potential_impacts'
+  tag 'third_party_tools'
+  tag 'mitigation_controls'
+  tag 'responsibility'
+  tag 'ia_controls'
+  tag 'check'
+  tag 'fix'
 
   isInstalledIsapiCGI = !command('Get-WindowsFeature Web-ISAPI-Ext | Where Installed').stdout.strip.nil?
   notListedCgisAllowed = command('Get-WebConfigurationProperty -pspath "MACHINE/WEBROOT/APPHOST" -filter "system.webServer/security/isapiCgiRestriction" -Name notListedCgisAllowed | select -expandProperty value').stdout.strip == 'False'

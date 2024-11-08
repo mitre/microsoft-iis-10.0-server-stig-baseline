@@ -21,17 +21,25 @@ Add the Indexing Service snap-in.
 Edit the indexed directories to only include web document directories.'
   impact 0.5
   ref 'DPMS Target Microsoft IIS 10.0 Server'
-  tag check_id: 'C-20281r310902_chk'
-  tag severity: 'medium'
+  tag gtitle: 'SRG-APP-000266-WSR-000142'
   tag gid: 'V-218809'
   tag rid: 'SV-218809r961167_rule'
   tag stig_id: 'IIST-SV-000139'
-  tag gtitle: 'SRG-APP-000266-WSR-000142'
   tag fix_id: 'F-20279r310903_fix'
-  tag 'documentable'
-  tag legacy: ['SV-109257', 'V-100153']
   tag cci: ['CCI-001312']
   tag nist: ['SI-11 a']
+  tag 'false_negatives'
+  tag 'false_positives'
+  tag 'documentable'
+  tag 'mitigations'
+  tag 'severity_override_guidance'
+  tag 'potential_impacts'
+  tag 'third_party_tools'
+  tag 'mitigation_controls'
+  tag 'responsibility'
+  tag 'ia_controls'
+  tag 'check'
+  tag 'fix'
 
   if registry_key('HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\ContentIndex\Catalogs').exists
     describe "This control requires manual review to determine if directories other than web document

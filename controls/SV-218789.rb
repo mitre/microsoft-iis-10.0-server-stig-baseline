@@ -33,17 +33,25 @@ Click "OK".
 Click "Apply" under the "Actions" pane.'
   impact 0.5
   ref 'DPMS Target Microsoft IIS 10.0 Server'
-  tag check_id: 'C-20261r505276_chk'
-  tag severity: 'medium'
+  tag gtitle: 'SRG-APP-000100-WSR-000064'
   tag gid: 'V-218789'
   tag rid: 'SV-218789r960906_rule'
   tag stig_id: 'IIST-SV-000111'
-  tag gtitle: 'SRG-APP-000100-WSR-000064'
   tag fix_id: 'F-20259r505277_fix'
-  tag 'documentable'
-  tag legacy: ['SV-109217', 'V-100113']
   tag cci: ['CCI-001487']
-  tag nist: ['AU-3 f']
+  tag nist: ['AU-3', 'AU-3 f']
+  tag 'false_negatives'
+  tag 'false_positives'
+  tag 'documentable'
+  tag 'mitigations'
+  tag 'severity_override_guidance'
+  tag 'potential_impacts'
+  tag 'third_party_tools'
+  tag 'mitigation_controls'
+  tag 'responsibility'
+  tag 'ia_controls'
+  tag 'check'
+  tag 'fix'
 
   describe 'Manual review of web server is required.' do
     skip 'Manual review of web server is required'

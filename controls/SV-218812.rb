@@ -33,17 +33,25 @@ Select "Apply" in "Actions" pane.
 Restart the Web Management Service under the "Actions" pane.'
   impact 0.5
   ref 'DPMS Target Microsoft IIS 10.0 Server'
-  tag check_id: 'C-20284r310911_chk'
-  tag severity: 'medium'
+  tag gtitle: 'SRG-APP-000315-WSR-000004'
   tag gid: 'V-218812'
   tag rid: 'SV-218812r961278_rule'
   tag stig_id: 'IIST-SV-000142'
-  tag gtitle: 'SRG-APP-000315-WSR-000004'
   tag fix_id: 'F-20282r310912_fix'
-  tag 'documentable'
-  tag legacy: ['SV-109263', 'V-100159']
   tag cci: ['CCI-002314']
   tag nist: ['AC-17 (1)']
+  tag 'false_negatives'
+  tag 'false_positives'
+  tag 'documentable'
+  tag 'mitigations'
+  tag 'severity_override_guidance'
+  tag 'potential_impacts'
+  tag 'third_party_tools'
+  tag 'mitigation_controls'
+  tag 'responsibility'
+  tag 'ia_controls'
+  tag 'check'
+  tag 'fix'
 
   describe 'This test currently has no automated tests, you must check manually' do
     skip 'This check must be preformed manually'

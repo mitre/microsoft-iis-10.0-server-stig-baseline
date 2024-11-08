@@ -22,17 +22,25 @@ If the paths of all log files are not part of the system backup and/or not backe
   desc 'fix', 'Configure system backups to include the directory paths of all IIS 10.0 web server and website log files.'
   impact 0.5
   ref 'DPMS Target Microsoft IIS 10.0 Server'
-  tag check_id: 'C-20263r310848_chk'
-  tag severity: 'medium'
+  tag gtitle: 'SRG-APP-000125-WSR-000071'
   tag gid: 'V-218791'
   tag rid: 'SV-218791r960948_rule'
   tag stig_id: 'IIST-SV-000116'
-  tag gtitle: 'SRG-APP-000125-WSR-000071'
   tag fix_id: 'F-20261r310849_fix'
-  tag 'documentable'
-  tag legacy: ['SV-109221', 'V-100117']
   tag cci: ['CCI-001348']
   tag nist: ['AU-9 (2)']
+  tag 'false_negatives'
+  tag 'false_positives'
+  tag 'documentable'
+  tag 'mitigations'
+  tag 'severity_override_guidance'
+  tag 'potential_impacts'
+  tag 'third_party_tools'
+  tag 'mitigation_controls'
+  tag 'responsibility'
+  tag 'ia_controls'
+  tag 'check'
+  tag 'fix'
 
   describe 'Manual review of web server is required.' do
     skip 'Manual review of web server is required'

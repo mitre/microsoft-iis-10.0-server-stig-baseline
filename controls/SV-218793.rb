@@ -17,19 +17,27 @@ Note: If additional software is needed, supporting documentation must be signed 
   desc 'fix', 'Remove all unapproved programs and roles from the production IIS 10.0 web server.'
   impact 0.5
   ref 'DPMS Target Microsoft IIS 10.0 Server'
-  tag check_id: 'C-20265r310854_chk'
-  tag severity: 'medium'
+  tag gtitle: 'SRG-APP-000141-WSR-000075'
   tag gid: 'V-218793'
   tag rid: 'SV-218793r960963_rule'
   tag stig_id: 'IIST-SV-000118'
-  tag gtitle: 'SRG-APP-000141-WSR-000075'
   tag fix_id: 'F-20263r310855_fix'
-  tag 'documentable'
-  tag legacy: ['SV-109225', 'V-100121']
   tag cci: ['CCI-000381']
   tag nist: ['CM-7 a']
+  tag 'false_negatives'
+  tag 'false_positives'
+  tag 'documentable'
+  tag 'mitigations'
+  tag 'severity_override_guidance'
+  tag 'potential_impacts'
+  tag 'third_party_tools'
+  tag 'mitigation_controls'
+  tag 'responsibility'
+  tag 'ia_controls'
+  tag 'check'
+  tag 'fix'
 
-  describe "The IIS 10.0 web server must only contain functions necessary for
+  describe "The IIS 8.5 web server must only contain functions necessary for
   operation." do
     skip 'Manual review required for this control'
   end

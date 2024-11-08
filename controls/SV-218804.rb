@@ -4,9 +4,7 @@ control 'SV-218804' do
 
 Using URI will embed the session ID as a query string in the Uniform Resource Identifier (URI) request and then the URI is redirected to the originally requested URL. The changed URI request is used for the duration of the session, so no cookie is necessary.
 
-By requiring expired session IDs to be regenerated while using URI, potential attackers have less time to capture a cookie and gain access to the Web server content.
-
-'
+By requiring expired session IDs to be regenerated while using URI, potential attackers have less time to capture a cookie and gain access to the Web server content.'
   desc 'check', 'Open the IIS 10.0 Manager.
 Click the IIS 10.0 web server name.
 Under "ASP.Net", double-click the "Session State" icon.
@@ -33,18 +31,25 @@ Under "Cookie Settings", select "Use Cookies” from the "Mode" drop-down list.
 Click "Apply" in the "Actions" pane.'
   impact 0.5
   ref 'DPMS Target Microsoft IIS 10.0 Server'
-  tag check_id: 'C-20276r310887_chk'
-  tag severity: 'medium'
+  tag gtitle: 'SRG-APP-000223-WSR-000011'
   tag gid: 'V-218804'
   tag rid: 'SV-218804r961116_rule'
   tag stig_id: 'IIST-SV-000134'
-  tag gtitle: 'SRG-APP-000223-WSR-000011'
   tag fix_id: 'F-20274r310888_fix'
-  tag satisfies: ['SRG-APP-000223-WSR-000011', 'SRG-APP-000220-WSR-000201']
+  tag cci: ['CCI-001185', 'CCI-001664']
+  tag nist: ['SC-23 (1)', 'SC-23 (3)']
+  tag 'false_negatives'
+  tag 'false_positives'
   tag 'documentable'
-  tag legacy: ['SV-109247', 'V-100143']
-  tag cci: ['CCI-001664']
-  tag nist: ['SC-23 (3)']
+  tag 'mitigations'
+  tag 'severity_override_guidance'
+  tag 'potential_impacts'
+  tag 'third_party_tools'
+  tag 'mitigation_controls'
+  tag 'responsibility'
+  tag 'ia_controls'
+  tag 'check'
+  tag 'fix'
 
   cookie_setting = command('Get-WebConfigurationProperty -Filter system.web/sessionState -name * | select -expand cookieless').stdout.strip
 

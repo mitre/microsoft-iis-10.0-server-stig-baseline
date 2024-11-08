@@ -45,17 +45,25 @@ If necessary, stop the IIS 10.0 web server by selecting the web server in the II
 In the "Actions" pane, under "Manage Server", click "Stop".'
   impact 0.5
   ref 'DPMS Target Microsoft IIS 10.0 Server'
-  tag check_id: 'C-20285r310914_chk'
-  tag severity: 'medium'
+  tag gtitle: 'SRG-APP-000316-WSR-000170'
   tag gid: 'V-218813'
   tag rid: 'SV-218813r961281_rule'
   tag stig_id: 'IIST-SV-000143'
-  tag gtitle: 'SRG-APP-000316-WSR-000170'
   tag fix_id: 'F-20283r310915_fix'
-  tag 'documentable'
-  tag legacy: ['SV-109265', 'V-100161']
   tag cci: ['CCI-002322']
   tag nist: ['AC-17 (9)']
+  tag 'false_negatives'
+  tag 'false_positives'
+  tag 'documentable'
+  tag 'mitigations'
+  tag 'severity_override_guidance'
+  tag 'potential_impacts'
+  tag 'third_party_tools'
+  tag 'mitigation_controls'
+  tag 'responsibility'
+  tag 'ia_controls'
+  tag 'check'
+  tag 'fix'
 
   describe "Manual validation required. Review IIS Webserver for capability to immediately
   disconnect or disable remote access to the hosted applications" do
