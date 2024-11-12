@@ -1,11 +1,11 @@
 # Microsoft IIS 10.0 Server Security Technical Implementation Guide
 This InSpec Profile was created to facilitate testing and auditing of `Microsoft IIS 10.0 Server`
-infrastructure and applications when validating compliancy with Department of [Defense (DoD) STIG](https://iase.disa.mil/stigs/)
+infrastructure and applications when validating compliancy with [Department of Defense (DoD) STIG](https://public.cyber.mil/stigs/)
 requirements
 
-- Profile Version: 3.1.0
-- STIG Date:  24 Jul 2024    
-- STIG Version: Version 3 Release 1 (V3R1)
+- Profile Version: **3.1.0**
+- STIG Date:  **24 Jul 2024** 
+- STIG Version: **Version 3 Release 1 (V3R1)**
 
 
 This profile was developed to reduce the time it takes to perform a security checks based upon the
