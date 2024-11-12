@@ -10,5 +10,41 @@ description: null
 version: 3.1.0
 supports: []
 depends: []
-inspec_version: |
-  "~>6.0"
+inspec_version: "~>6.0"
+
+inputs:
+  # SV-218794
+  - name: is_proxy
+    description: 'Set to true if this system is running as a proxy server'
+    value: false
+
+  # SV-218785
+  - name: log_fileds
+    description: 'List of fields to be included in Web Server Logging Configuration'
+    type: array
+    value: ['Date', 'Time', 'ClientIP', 'UserName', 'Method', 'UriQuery', 'HttpStatus', 'Referer']
+
+  # SV-218816
+  - name: authorized_users
+    description: 'A list of authorized users'
+    type: array
+    value: ['VAGRANT-IFT3JLA\vagrant']
+    sensitive: true
+
+  # SV-218796
+  - name: minimal_local_users
+    description: 'Minimum number of users required for server to operate'
+    type: array
+    value: ['Administrator', 'Guest', 'vagrant']
+
+  # SV-218815
+  - name: log_directory
+    description: 'IIS site log directory'
+    type: string
+    value: '%SystemDrive%\inetpub\logs\LogFiles'
+
+  # SV-218795, SV-218801
+  - name: disable_slow_controls
+    description: 'Disable slow running controls V-76705 and V-76717'
+    value: false
+
