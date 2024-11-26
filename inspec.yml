@@ -1,5 +1,5 @@
 name: microsoft-iis-10.0-server-stig-baseline
-title: Microsoft IIS 10.0 Server Security Technical Implementation Guide
+title: Microsoft IIS 10.0 Server Security Technical Implementation Guide :: Version 3, Release 1 :: Benchmark Date:  24 Jul 2024
 maintainer: MITRE SAF Team
 copyright: MITRE
 copyright_email: saf@groups.mitre.org
@@ -47,4 +47,3 @@ inputs:
   - name: disable_slow_controls
     description: 'Disable slow running controls V-76705 and V-76717'
     value: false
-
